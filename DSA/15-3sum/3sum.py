@@ -10,6 +10,8 @@ class Solution:
                 continue
             elif nums[j] > 0:
                 break
+            elif nums[j] + nums[n-2] + nums[n-1] < 0:
+                continue
             else:
                 pass
             
