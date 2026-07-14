@@ -8,8 +8,12 @@ class Solution:
             k = n-1
             if j > 0 and nums[j] == nums[j - 1]:
                 continue
+            elif nums[j] > 0:
+                break
+            else:
+                pass
             
-            while i<k:
+            while i < k:
                 s = nums[i] + nums[j] + nums[k]
                 if s > 0:
                     k -= 1
