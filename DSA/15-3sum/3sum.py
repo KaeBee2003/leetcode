@@ -13,21 +13,21 @@ class Solution:
                 s = nums[i] + nums[j] + nums[k]
                 if s > 0:
                     k -= 1
-                    while k > 1 and nums[k] == nums[k+1]:
+                    while k > j and nums[k] == nums[k+1]:
                         k -= 1
 
                 elif s < 0:
                     i += 1
-                    while i < n-1 and nums[i] == nums[i-1]:
+                    while i < k and nums[i] == nums[i-1]:
                         i += 1
 
                 else:
                     a.append([nums[i],nums[j],nums[k]])
                     i += 1
-                    while i < n-1 and nums[i] == nums[i-1]:
+                    while i < k and nums[i] == nums[i-1]:
                         i += 1
                     k -= 1
-                    while k > 1 and nums[k] == nums[k+1]:
+                    while k > j and nums[k] == nums[k+1]:
                         k -= 1
 
 
