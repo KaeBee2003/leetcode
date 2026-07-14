@@ -15,16 +15,6 @@ class Solution:
                     k -= 1
                     while k > 1 and nums[k] == nums[k+1]:
                         k -= 1
-                    
-                elif s == 0:
-                    three_sum = [nums[i],nums[j],nums[k]]
-                    a.append(three_sum)
-                    i += 1
-                    while i < n-1 and nums[i] == nums[i-1]:
-                        i += 1
-                    k -= 1
-                    while k > 1 and nums[k] == nums[k+1]:
-                        k -= 1
 
                 elif s < 0:
                     i += 1
@@ -32,6 +22,13 @@ class Solution:
                         i += 1
 
                 else:
-                    pass
+                    a.append([nums[i],nums[j],nums[k]])
+                    i += 1
+                    while i < n-1 and nums[i] == nums[i-1]:
+                        i += 1
+                    k -= 1
+                    while k > 1 and nums[k] == nums[k+1]:
+                        k -= 1
+
 
         return a 
