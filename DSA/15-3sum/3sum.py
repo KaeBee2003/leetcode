@@ -12,7 +12,7 @@ class Solution:
                     k -= 1
                     
                 elif s == 0:
-                    three_sum = tuple(sorted([nums[i],nums[j],nums[k]]))
+                    three_sum = tuple([nums[i],nums[j],nums[k]])
                     a.add(three_sum)
                     i += 1
                     k -= 1
@@ -20,8 +20,6 @@ class Solution:
                 elif s < 0:
                     i += 1
 
-                elif i>k:
-                    break
                 else:
                     pass
 
