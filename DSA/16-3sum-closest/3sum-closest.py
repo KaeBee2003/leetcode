@@ -6,18 +6,14 @@ class Solution:
         nums.sort()
         abs_delta = math.inf
         best = None
-        
+
         for j in range(0,n-2):
             i = j+1
             k = n-1
+            s = nums[j] - target
+
             while i < k:
-
-                total = nums[i] + nums[j] + nums[k]
-                delta = total - target
-
-                if abs(delta) < abs_delta:
-                    abs_delta = abs(delta)
-                    best = total
+                delta = nums[i] + nums[k] + s
 
                 if delta > 0:
                     k -= 1
@@ -30,7 +26,11 @@ class Solution:
                         i += 1
 
                 else:
-                    return total
+                    return delta + target
+
+                if abs(delta) < abs_delta:
+                    abs_delta = abs(delta)
+                    best = delta + target
 
 
         return best
